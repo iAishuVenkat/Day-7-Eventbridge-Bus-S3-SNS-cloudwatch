@@ -1,6 +1,6 @@
 # EventBridge S3 Upload Notifications
 
-I built this project to learn EventBridge by creating something actually useful - getting notified when files are uploaded to S3. Turns out it's a great way to understand event-driven architecture.
+This project demonstrates EventBridge by creating something practical - getting notified when files are uploaded to S3. It's a great way to understand event-driven architecture.
 
 ## What This Does
 
@@ -11,23 +11,23 @@ Upload a file to S3, and you'll automatically get:
 
 ## Why EventBridge?
 
-I tried the direct S3 → SNS approach first, but EventBridge is way more powerful. You can route one event to multiple services, filter events, and build complex workflows. Plus it's what most companies use in production.
+While the direct S3 → SNS approach works, EventBridge is much more powerful. You can route one event to multiple services, filter events, and build complex workflows. Plus it's what most companies use in production.
 
-## What I Learned
+## Key Learning
 
-The biggest "aha" moment was understanding S3 has two different notification systems:
+The important insight is understanding S3 has two different notification systems:
 - **Event notifications** - sends directly to SNS/SQS/Lambda (simple but limited)
 - **EventBridge integration** - sends to EventBridge first, then you can route anywhere (powerful)
 
-Most tutorials don't explain this difference clearly, which is why I got stuck initially.
+Understanding this difference opens up much more sophisticated architectures.
 
 ## Setup Options
 
-I've included two ways to set this up:
+This project includes two ways to set this up:
 
-**AWS-CONSOLE-SETUP.md** - If you prefer clicking through the console (I recommend this for your first time)
+**AWS-CONSOLE-SETUP.md** - For those who prefer clicking through the console (recommended for first time)
 
-**COMPLETE-WALKTHROUGH.md** - If you want to use CLI commands (better for automation later)
+**COMPLETE-WALKTHROUGH.md** - For those who want to use CLI commands (better for automation later)
 
 Both approaches work the same way, just different interfaces.
 
@@ -41,6 +41,6 @@ This pattern shows up everywhere:
 
 ## Getting Started
 
-Pick whichever setup guide matches how you like to work. The console approach is more visual, CLI is faster once you know what you're doing.
+Pick whichever setup guide matches your preference. The console approach is more visual, CLI is faster once you know what you're doing.
 
 After setup, just upload any file to your S3 bucket and watch the magic happen!

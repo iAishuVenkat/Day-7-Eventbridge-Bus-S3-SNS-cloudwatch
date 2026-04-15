@@ -1,12 +1,12 @@
 # Setting Up S3 Upload Notifications with EventBridge
 
-I spent way too much time figuring this out, so here's the step-by-step process that actually works.
+After working through this setup, here's the step-by-step process that works reliably.
 
 ## What We're Building
 
 Upload a file to S3 → EventBridge catches it → sends email + logs to CloudWatch
 
-The tricky part is S3 has two different ways to send notifications, and most tutorials don't explain which one to use.
+The key insight is that S3 has two different ways to send notifications, and understanding which one to use makes all the difference.
 
 ## Before You Start
 
@@ -62,7 +62,7 @@ This is where EventBridge will log the S3 events.
 
 ## Step 4: The Key Step - Enable EventBridge on S3
 
-This is where I got confused initially. S3 has two notification systems:
+Here's the important distinction. S3 has two notification systems:
 
 1. **Event notifications** (the obvious one) - goes directly to SNS/SQS/Lambda
 2. **EventBridge integration** (the one we want) - goes to EventBridge first
@@ -203,7 +203,7 @@ You should see detailed JSON with all the S3 event info.
 - Check targets are configured: `aws events list-targets-by-rule --rule s3-upload-rule --region us-east-1`
 
 **Still not working?**
-- Wait 5-10 minutes - sometimes there's a delay
+- Wait 5-10 minutes - there can be a brief delay
 - Try uploading another file
 - Make sure you enabled EventBridge on the S3 bucket (step 4)
 

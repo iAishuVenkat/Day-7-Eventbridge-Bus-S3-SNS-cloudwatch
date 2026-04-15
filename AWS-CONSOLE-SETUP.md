@@ -1,6 +1,6 @@
 # Setting Up EventBridge S3 Notifications (Console Method)
 
-If you prefer clicking through the AWS console instead of typing commands, this guide is for you. I find the visual approach easier when learning something new.
+For those who prefer clicking through the AWS console instead of typing commands, this guide provides a visual approach. The console method makes it easier to see what's happening when learning something new.
 
 ## What We're Building
 
@@ -58,7 +58,7 @@ Now subscribe your email:
 
 ## Step 4: Enable EventBridge on S3 (The Important Part)
 
-This is where most people get confused. S3 has two notification systems, and we need the right one.
+Here's the key distinction. S3 has two notification systems, and we need the right one.
 
 1. Go back to **S3 Console**
 2. Click your bucket name
@@ -164,7 +164,7 @@ This shows EventBridge is working and routing events properly.
 **No email notifications?**
 - Did you confirm the email subscription in SNS?
 - Check your spam folder
-- Wait 5-10 minutes, sometimes there's a delay
+- Wait 5-10 minutes, there can be a brief delay
 
 **No CloudWatch logs?**
 - Make sure you enabled "Amazon EventBridge" on the S3 bucket (not "Event notifications")

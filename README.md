@@ -2,6 +2,10 @@
 
 This project demonstrates EventBridge by creating something practical - getting notified when files are uploaded to S3. It's a great way to understand event-driven architecture.
 
+## Architecture
+
+![Architecture](Architecture.png)
+
 ## What This Does
 
 Upload a file to S3, and you'll automatically get:
